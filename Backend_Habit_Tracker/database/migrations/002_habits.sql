@@ -1,0 +1,33 @@
+CREATE TABLE IF NOT EXISTS habitos (
+ id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ usuario_id INT UNSIGNED NOT NULL,
+ nombre VARCHAR(120) NOT NULL,
+ descripcion VARCHAR(1000) NOT NULL DEFAULT '',
+ creado_en TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
+ INDEX propietario (usuario_id, id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS habito_versiones (
+ id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ habito_id INT UNSIGNED NOT NULL,
+ desde DATE NOT NULL,
+ inicio DATE NOT NULL,
+ frecuencia ENUM('diario','semanal','dias') NOT NULL,
+ dias VARCHAR(20) NOT NULL DEFAULT '',
+ dias_semana TINYINT UNSIGNED NOT NULL DEFAULT 1,
+ objetivo DECIMAL(10,3) NOT NULL,
+ unidad VARCHAR(40) NOT NULL DEFAULT '',
+ archivado BOOLEAN NOT NULL DEFAULT FALSE,
+ UNIQUE KEY version_fecha (habito_id, desde),
+ FOREIGN KEY (habito_id) REFERENCES habitos(id),
+ CHECK (objetivo > 0), CHECK (dias_semana BETWEEN 1 AND 7)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS habito_registros (
+ habito_id INT UNSIGNED NOT NULL,
+ fecha DATE NOT NULL,
+ cantidad DECIMAL(10,3) NOT NULL DEFAULT 0,
+ actualizado_en TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+ PRIMARY KEY (habito_id, fecha),
+ FOREIGN KEY (habito_id) REFERENCES habitos(id),
+ CHECK (cantidad >= 0), INDEX registros_fecha (fecha, habito_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

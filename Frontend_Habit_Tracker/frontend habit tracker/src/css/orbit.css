@@ -1,0 +1,96 @@
+.dashboard-focus-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.43fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.habit-orbit {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border: 1px solid #7df4c633;
+  border-radius: 1.5rem 1.5rem 4rem 1.5rem;
+  background:
+    radial-gradient(ellipse at 100% 100%, #7df4c61c, transparent 70%),
+    linear-gradient(140deg, #1b2b36, #111b2a);
+  overflow: hidden;
+  min-width: 0;
+}
+.habit-orbit > div:first-child {
+  position: relative;
+  min-width: 0;
+  z-index: 1;
+  flex: 1;
+}
+.habit-orbit h2 {
+  font-size: clamp(1.75rem, 2.8vw, 2.6rem);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 1.1;
+}
+.habit-orbit h2 span {
+  color: var(--color-primario);
+}
+.habit-orbit p:not(.dashboard-eyebrow) {
+  color: var(--color-suave);
+  margin-top: 1rem;
+  max-width: 23rem;
+  font-size: 0.8rem;
+}
+.habit-orbit .boton {
+  margin-top: 1.75rem;
+  font-size: 0.8rem;
+}
+.habit-orbit .orbit-visual {
+  position: absolute;
+  width: 20rem;
+  right: -5rem;
+  bottom: -6rem;
+  opacity: 0.2;
+  pointer-events: none;
+}
+@media (min-width: 1400px) {
+  .habit-orbit > div:first-child {
+    max-width: 26rem;
+  }
+  .habit-orbit .orbit-visual {
+    width: 17rem;
+    right: -1rem;
+    bottom: -1rem;
+    opacity: 0.6;
+  }
+}
+@media (max-width: 1000px) {
+  .dashboard-focus-grid {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-focus-grid .dashboard-progress {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 0.5rem 1rem;
+  }
+  .dashboard-focus-grid .dashboard-progress-ring {
+    grid-column: 2;
+    grid-row: 1/5;
+    margin: 0 auto;
+    width: 8rem;
+    height: 8rem;
+  }
+  .dashboard-focus-grid .dashboard-progress > .dashboard-eyebrow {
+    align-self: end;
+  }
+  .dashboard-focus-grid .dashboard-progress-note {
+    grid-column: 1/-1;
+  }
+}
+@media (max-width: 380px) {
+  .dashboard-focus-grid .dashboard-progress {
+    display: block;
+  }
+  .dashboard-focus-grid .dashboard-progress-ring {
+    margin: 1rem auto;
+  }
+}

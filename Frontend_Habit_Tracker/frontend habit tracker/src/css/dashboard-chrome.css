@@ -1,0 +1,112 @@
+.dashboard-main {
+  width: 100%;
+  max-width: 96rem;
+  margin-inline: auto;
+  padding: clamp(1.5rem, 3vw, 3rem);
+  min-width: 0;
+}
+.dashboard-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: var(--borde);
+}
+.dashboard-header > div:first-child {
+  min-width: 0;
+}
+.dashboard-eyebrow {
+  color: var(--color-primario);
+  font-size: 0.58rem;
+  font-weight: 750;
+  letter-spacing: 0.17em;
+  margin-bottom: 0.75rem !important;
+}
+.dashboard-header h1 {
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  color: var(--color-texto-intenso);
+  letter-spacing: -0.06em;
+  line-height: 1.2;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.dashboard-greeting-dot {
+  color: var(--color-primario);
+}
+.dashboard-header p:last-child {
+  color: var(--color-suave);
+  font-size: 0.8rem;
+  margin-top: 0.65rem;
+}
+.dashboard-date {
+  flex-shrink: 0;
+  text-align: right;
+  color: var(--color-suave);
+  font-size: 0.7rem;
+  padding: 0.7rem 1rem;
+  border: var(--borde);
+  border-radius: var(--radio);
+  background: #141c2a;
+}
+.dashboard-date > span {
+  display: block;
+  color: var(--color-texto);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.35rem;
+}
+.habit-header-tools {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+.habit-bell {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  border: var(--borde);
+  border-radius: 50%;
+  color: var(--color-suave);
+  background: var(--color-superficie);
+  transition:
+    color var(--transicion),
+    border-color var(--transicion);
+}
+.habit-bell:hover {
+  color: var(--color-primario);
+  border-color: #7df4c660;
+}
+.habit-bell span,
+.habit-nav-count {
+  padding: 0.15rem 0.4rem;
+  border-radius: 100px;
+  font-size: 0.6rem;
+  background: var(--color-lavanda);
+  color: #191930;
+  font-weight: 750;
+}
+.habit-bell span {
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+}
+.habit-nav-count {
+  margin-left: auto;
+}
+.dashboard-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: var(--borde);
+  color: var(--color-suave);
+  font-size: 0.65rem;
+}

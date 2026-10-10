@@ -1,0 +1,203 @@
+.habit-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: var(--espacio-4);
+}
+.habit-card {
+  position: relative;
+  padding: 1.5rem;
+  overflow: hidden;
+  border: var(--borde);
+  border-radius: 1.25rem;
+  background: #131d2a;
+  animation: dashboard-rise 350ms both;
+  transition:
+    transform var(--transicion),
+    border-color var(--transicion),
+    box-shadow var(--transicion),
+    background var(--transicion);
+}
+.habit-card::before {
+  position: absolute;
+  top: 1.2rem;
+  bottom: 1.2rem;
+  left: 0;
+  width: 3px;
+  border-radius: 999px;
+  background: linear-gradient(var(--color-lavanda), var(--color-secundario));
+  content: "";
+  opacity: 0.7;
+}
+.habit-card:hover {
+  border-color: #92b9ff70;
+  box-shadow: var(--sombra-hover);
+  transform: translateY(-2px);
+}
+.habit-card:focus-within {
+  border-color: #7df4c680;
+  box-shadow: 0 0 0 1px #7df4c622;
+}
+.habit-card-metrics {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+.habit-card-metrics > p {
+  margin: 0;
+}
+.habit-card-metrics strong {
+  color: var(--color-texto);
+}
+.habit-streak {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.65rem;
+  color: var(--color-suave);
+}
+.habit-streak.has-streak {
+  color: var(--color-acento);
+}
+.habit-list-filter {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-top: 1.25rem;
+  color: var(--color-suave);
+  font-size: 0.8rem;
+}
+.habit-list-filter select {
+  flex: 0 1 12rem;
+}
+.habit-detail > .habit-card {
+  margin-top: 1.5rem;
+}
+.habit-detail > h3 {
+  margin-top: 1.5rem;
+  font-weight: 500;
+}
+.habit-detail > p {
+  margin-top: 1rem;
+  color: var(--color-suave);
+  font-size: 0.85rem;
+}
+@media (min-width: 1250px) {
+  .habit-collection {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.habit-card-heading,
+.habit-actions,
+.habit-progress-form {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.habit-card-heading > a {
+  min-width: 0;
+  flex: 1 1 10rem;
+  text-decoration: none;
+}
+.habit-card h3 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-texto-intenso);
+  letter-spacing: -0.025em;
+}
+.habit-card p {
+  overflow-wrap: anywhere;
+  color: var(--color-suave);
+  font-size: 0.8rem;
+  margin-top: 0.75rem;
+}
+.habit-card a,
+.habit-actions a {
+  color: var(--color-primario);
+  font-weight: 650;
+}
+.habit-card progress {
+  display: block;
+  width: 100%;
+  height: 0.4rem;
+  margin: 1rem 0 1.25rem;
+}
+.habit-badge {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.65rem;
+  border: var(--borde);
+  background: #192333;
+  color: var(--color-suave);
+  border-radius: 999px;
+}
+.habit-badge.complete {
+  border-color: #7df4c640;
+  background: var(--color-primario-suave);
+  color: var(--color-primario);
+}
+.habit-badge.complete::before {
+  content: "✓ ";
+}
+.habit-card.is-complete {
+  border-color: #7df4c655;
+  background: linear-gradient(120deg, #152c2a, #131d2a);
+}
+.habit-card.is-complete::before {
+  background: var(--color-primario);
+  box-shadow: 0 0 14px #7df4c630;
+}
+.habit-card.is-complete .habit-badge {
+  animation: habit-check-pop 300ms ease-out;
+}
+.habit-success {
+  background: var(--color-primario-suave);
+  color: var(--color-primario) !important;
+  padding: 0.75rem;
+  border-radius: var(--radio);
+  margin-top: 0.75rem !important;
+}
+.habit-task-list {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+.habit-check-label {
+  display: flex !important;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem;
+  border-radius: 0.7rem;
+  background: #1c293a;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background var(--transicion);
+}
+.habit-check-label input {
+  width: 1.2rem;
+  height: 1.2rem;
+  min-height: 1.2rem;
+  accent-color: var(--color-primario);
+  flex-shrink: 0;
+}
+.habit-check-label:has(input:checked) {
+  background: var(--color-primario-suave);
+}
+.habit-check-label:has(input:checked) span {
+  text-decoration: line-through;
+  color: var(--color-suave);
+}
+.habit-task-list > small {
+  color: var(--color-suave);
+}
+@media (max-width: 600px) {
+  .habit-card {
+    padding: 1rem;
+  }
+}

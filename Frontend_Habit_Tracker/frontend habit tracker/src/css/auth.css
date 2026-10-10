@@ -1,0 +1,210 @@
+.auth-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(25rem, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 7vw, 6rem);
+  min-height: calc(100dvh - 5.25rem);
+  padding-block: clamp(3rem, 6vw, 5rem);
+  animation: surface-enter 450ms both;
+}
+.auth-presentacion {
+  position: relative;
+  max-width: 31rem;
+}
+.auth-presentacion::before {
+  position: absolute;
+  width: min(100%, 24rem);
+  aspect-ratio: 1;
+  top: -6rem;
+  left: 0;
+  border: 1px solid #7df4c612;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 3rem #7df4c603,
+    0 0 0 3rem #7df4c603;
+  content: "";
+  pointer-events: none;
+  z-index: -1;
+}
+.auth-distintivo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid #7df4c640;
+  border-radius: 999px;
+  background: #7df4c60a;
+  color: var(--color-primario);
+  font-size: 0.7rem;
+  font-weight: 650;
+}
+.auth-distintivo::before {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--color-primario);
+  box-shadow: 0 0 12px #7df4c660;
+  content: "";
+}
+.auth-presentacion h2 {
+  margin: 1.8rem 0 1rem;
+  color: var(--color-texto-intenso);
+  font-size: clamp(2.3rem, 5vw, 3.7rem);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 1.05;
+}
+.auth-presentacion h2 span {
+  color: var(--color-primario);
+}
+.header-form h1 span {
+  color: var(--color-texto-intenso);
+}
+.auth-presentacion > p {
+  color: var(--color-suave);
+  line-height: 1.85;
+}
+.auth-rutina {
+  margin-block: 2rem;
+  padding: 1.5rem;
+  border: var(--borde);
+  border-radius: 1.5rem 1.5rem 3rem 1.5rem;
+  background: linear-gradient(130deg, #182a31, #121927);
+}
+.auth-rutina strong {
+  font-family: var(--fuente-display);
+  color: var(--color-primario);
+  font-weight: 500;
+}
+.auth-rutina p {
+  color: var(--color-suave);
+  font-size: 0.85rem;
+}
+.auth-rutina p:last-child {
+  margin-bottom: 0;
+}
+.auth-eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--color-secundario);
+  font-size: 0.6rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+}
+.auth-nota {
+  font-size: 0.75rem;
+}
+.auth-form {
+  position: relative;
+  min-width: 0;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: var(--borde);
+  border-radius: 1.75rem;
+  background: linear-gradient(150deg, #1a2433f2, #101722f2);
+  box-shadow: var(--sombra);
+}
+.auth-form::before {
+  position: absolute;
+  top: -1px;
+  left: 2rem;
+  width: 35%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primario),
+    var(--color-lavanda),
+    transparent
+  );
+  content: "";
+}
+.header-form h1 {
+  margin: 0 0 0.75rem;
+  color: var(--color-texto-intenso);
+  letter-spacing: -0.05em;
+  font-weight: 500;
+}
+.header-form > p:last-child {
+  font-size: 0.85rem;
+}
+.auth-form label {
+  color: var(--color-texto);
+  font-size: 0.8rem;
+  font-weight: 650;
+}
+.auth-form .entrada {
+  min-height: 3.1rem;
+}
+.auth-submit {
+  width: 100%;
+  min-height: 3.15rem;
+  justify-content: space-between;
+  padding-inline: 1.2rem;
+}
+.auth-alternativa {
+  margin: 0;
+  color: var(--color-suave);
+  font-size: 0.8rem;
+  text-align: center;
+}
+.auth-enlace {
+  padding: 0.3rem;
+  border: 0;
+  background: transparent;
+  color: var(--color-primario);
+  font-weight: 650;
+  cursor: pointer;
+}
+.auth-enlace:hover {
+  text-decoration: underline;
+}
+.auth-mensaje {
+  margin: 0;
+  padding: 0.85rem;
+  border: 1px solid #7df4c630;
+  border-radius: var(--radio);
+  background: var(--color-primario-suave);
+  color: var(--color-primario);
+  font-size: 0.8rem;
+}
+.auth-mensaje:empty {
+  display: none;
+}
+.auth-error {
+  border-color: #ffabb230;
+  background: var(--color-error-suave);
+  color: var(--color-error);
+}
+.auth-cuenta {
+  max-width: 42rem;
+}
+.auth-datos {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.auth-datos dt {
+  color: var(--color-suave);
+  font-size: var(--texto-pequeno);
+}
+.auth-datos dd {
+  margin: 0 0 1rem;
+}
+@media (max-width: 760px) {
+  .auth-layout {
+    grid-template-columns: 1fr;
+    max-width: 38rem;
+    gap: 1.75rem;
+    min-height: auto;
+    padding-block: 2rem;
+  }
+  .auth-presentacion {
+    max-width: none;
+  }
+  .auth-presentacion h2 {
+    margin-top: 1rem;
+  }
+  .auth-presentacion::before,
+  .auth-rutina,
+  .auth-nota {
+    display: none;
+  }
+}

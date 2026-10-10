@@ -1,0 +1,67 @@
+.orbit-visual {
+  width: 100%;
+  aspect-ratio: 1;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.orbit-lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: orbit-arrive 1000ms both;
+}
+.orbit-core {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  width: 31%;
+  height: 31%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 20%, #304450, #101d25 80%);
+  box-shadow:
+    0 0 45px #7df4c620,
+    inset 0 0 0 1px #7df4c64d;
+  z-index: 1;
+}
+.orbit-core .brand-mark {
+  width: 42%;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+.orbit-core > span {
+  font-family: var(--fuente-display);
+  font-size: clamp(0.65rem, 1.5vw, 0.85rem);
+  letter-spacing: 0.1em;
+}
+.orbit-core small {
+  font-size: 0.4rem;
+  letter-spacing: 0.18em;
+  color: var(--color-suave);
+  margin-top: 0.3rem;
+}
+.orbit-label {
+  position: absolute;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  background: #101b28;
+  border: var(--borde);
+  border-radius: 0.6rem;
+  box-shadow: 0 8px 18px #00000030;
+}
+.orbit-label-focus {
+  top: 22%;
+  left: 0;
+  color: var(--color-primario);
+}
+.orbit-label-rhythm {
+  top: 24%;
+  right: 0;
+  color: var(--color-lavanda);
+}
+.orbit-label-growth {
+  bottom: 17%;
+  right: 8%;
+  color: var(--color-secundario);
+}

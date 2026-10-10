@@ -1,0 +1,187 @@
+.inicio-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 4vw, 4rem);
+  justify-content: center;
+  padding: 1.4rem 1rem;
+  border-block: var(--borde);
+  font-family: var(--fuente-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  background: #111823;
+  color: var(--color-suave);
+}
+.inicio-strip [aria-hidden] {
+  color: var(--color-primario);
+}
+.inicio-features {
+  padding-block: 5rem;
+}
+.inicio-section-heading {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.inicio-section-heading > .dashboard-eyebrow {
+  grid-column: 1/-1;
+}
+.inicio h2 {
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.05em;
+  margin: 0;
+}
+.inicio h2 span {
+  color: var(--color-suave);
+}
+.inicio-section-heading > p:last-child {
+  justify-self: end;
+  color: var(--color-suave);
+  font-size: 0.9rem;
+  line-height: 1.9;
+  margin: 0;
+}
+.inicio-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.inicio-feature {
+  position: relative;
+  padding: 1.75rem;
+  border: var(--borde);
+  border-radius: 1.5rem;
+  background: var(--panel-gradient);
+  transition:
+    transform var(--transicion),
+    border-color var(--transicion),
+    box-shadow var(--transicion);
+}
+.inicio-feature:hover {
+  transform: translateY(-5px);
+  border-color: #7df4c660;
+  box-shadow: var(--sombra-hover);
+}
+.inicio-feature:nth-child(2) {
+  background: linear-gradient(145deg, #20253b, #101722);
+}
+.inicio-feature:nth-child(3) {
+  border-radius: 1.5rem 1.5rem 3.5rem 1.5rem;
+}
+.inicio-feature-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-primario);
+  margin-bottom: 2rem;
+}
+.inicio-feature:nth-child(2) .inicio-feature-top {
+  color: var(--color-lavanda);
+}
+.inicio-feature:nth-child(3) .inicio-feature-top {
+  color: var(--color-secundario);
+}
+.inicio-feature-top span {
+  color: var(--color-suave);
+  font-size: 0.65rem;
+}
+.inicio-feature h3 {
+  font-weight: 500;
+  font-size: 1.3rem;
+  letter-spacing: -0.04em;
+  margin: 0 0 1rem;
+}
+.inicio-feature p {
+  color: var(--color-suave);
+  font-size: 0.85rem;
+  line-height: 1.8;
+  margin: 0 0 2rem;
+}
+.inicio-feature-arrow {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.8rem;
+  color: var(--color-primario);
+}
+.inicio-method {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding-block: 3rem 5rem;
+}
+.inicio-method > div > p:last-child {
+  color: var(--color-suave);
+  font-size: 0.9rem;
+  line-height: 1.9;
+  margin-top: 1.5rem;
+}
+.inicio-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.inicio-steps li {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: var(--borde);
+}
+.inicio-steps li > span {
+  display: grid;
+  place-items: center;
+  width: 2.7rem;
+  height: 2.7rem;
+  border: var(--borde);
+  border-radius: 50%;
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  color: var(--color-primario);
+}
+.inicio-steps h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.inicio-steps p {
+  margin: 0.5rem 0 0;
+  color: var(--color-suave);
+  font-size: 0.85rem;
+}
+.inicio-close-panel {
+  text-align: center;
+  padding: clamp(2rem, 6vw, 5rem) 1rem;
+  border: var(--borde);
+  border-radius: 2rem;
+  background:
+    radial-gradient(ellipse at 50% 100%, #7df4c618, transparent 65%), #121a26;
+}
+.inicio-close-panel > span {
+  display: block;
+  font-size: 2.5rem;
+  color: var(--color-primario);
+  margin-bottom: 1rem;
+}
+.inicio-close-panel > p:not(.dashboard-eyebrow) {
+  color: var(--color-suave);
+  margin-bottom: 2rem;
+}
+.inicio-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--color-suave);
+  font-size: 0.75rem;
+  padding-block: 2rem;
+}
+.inicio-footer .logo {
+  font-size: 1.2rem;
+}
+.inicio-footer > a:last-child {
+  color: var(--color-suave);
+  text-decoration: none;
+}

@@ -1,0 +1,197 @@
+.habit-form {
+  display: grid;
+  gap: var(--espacio-4);
+  max-width: 52rem;
+  margin-top: var(--espacio-4);
+  padding-top: var(--espacio-3);
+}
+.habit-editor {
+  max-width: 65rem;
+}
+.habit-editor-guide {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: var(--borde);
+}
+.habit-editor-guide > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  color: var(--color-suave);
+  padding: 0.5rem 0.75rem;
+  border: var(--borde);
+  border-radius: 999px;
+}
+.habit-editor-guide b {
+  color: var(--color-lavanda);
+  font-weight: 500;
+}
+.habit-form label,
+.habit-progress-form label {
+  display: grid;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.82rem;
+  min-width: 0;
+}
+.habit-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.dashboard-main :is(input, select, textarea) {
+  min-width: 0;
+  min-height: 2.9rem;
+  padding: 0.75rem 0.85rem;
+  border: var(--borde);
+  border-radius: var(--radio);
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  max-width: 100%;
+  transition:
+    border-color var(--transicion),
+    box-shadow var(--transicion),
+    background var(--transicion);
+}
+.dashboard-main :is(input, select, textarea):hover {
+  border-color: var(--color-borde-fuerte);
+}
+.dashboard-main :is(input, select, textarea):focus {
+  border-color: var(--color-primario);
+  background: #101b24;
+  box-shadow: 0 0 0 4px #7df4c613;
+  outline: 0;
+}
+.dashboard-main textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+.habit-form :is(input, textarea, select) {
+  width: 100%;
+}
+.habit-form input[type="checkbox"],
+.habit-form input[type="radio"] {
+  width: 1.2rem;
+  flex: 0 0 1.2rem;
+}
+.dashboard-main :is(input[type="checkbox"], input[type="radio"]) {
+  padding: 0;
+  min-height: 1.2rem;
+}
+.habit-weekdays {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+.habit-weekdays label {
+  display: flex;
+  align-items: center;
+  padding: 0.7rem;
+  border: var(--borde);
+  border-radius: var(--radio-pequeno);
+  background: #192333;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition:
+    border-color var(--transicion),
+    background var(--transicion);
+}
+.habit-weekdays label:has(input:checked) {
+  border-color: #7df4c670;
+  background: var(--color-primario-suave);
+  color: var(--color-primario);
+}
+.habit-weekdays input {
+  width: auto;
+  accent-color: var(--color-primario);
+}
+.habit-progress-form input {
+  width: 8rem;
+}
+.habit-form fieldset {
+  border: var(--borde);
+  border-radius: var(--radio-panel);
+  padding: 1.5rem;
+  background: #151f2d;
+  min-width: 0;
+}
+.habit-form legend {
+  padding: 0.2rem 0.6rem;
+  font-family: var(--fuente-display);
+  color: var(--color-lavanda);
+}
+.habit-actions button,
+.habit-progress-form button,
+.habit-form button,
+.habit-task-editor button,
+.habit-unlock button {
+  padding: 0.7rem 1rem;
+  min-height: 44px;
+  cursor: pointer;
+  border: 1px solid #7df4c650;
+  border-radius: var(--radio);
+  background: var(--color-primario);
+  color: var(--color-on-accent);
+  font-size: 0.8rem;
+  font-weight: 750;
+  transition:
+    background var(--transicion),
+    transform var(--transicion),
+    box-shadow var(--transicion);
+}
+.habit-actions button:hover,
+.habit-progress-form button:hover,
+.habit-form button:hover,
+.habit-task-editor button:hover,
+.habit-unlock button:hover {
+  background: var(--color-primario-hover);
+  box-shadow: 0 6px 20px #7df4c622;
+  transform: translateY(-1px);
+}
+.dashboard-main button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+  transform: none;
+}
+.dashboard-main :focus-visible,
+.dashboard-main :is(input, select, textarea):focus-visible {
+  outline: 2px solid var(--color-primario);
+  outline-offset: 3px;
+}
+.habit-task-editor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: end;
+  padding-block: 1rem;
+  border-bottom: var(--borde);
+}
+.habit-task-editor label {
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  flex: 1 1 12rem;
+  min-width: 0;
+}
+.habit-task-editor small {
+  flex-basis: 100%;
+  color: var(--color-suave);
+}
+.habit-task-editor .habit-button-soft {
+  color: var(--color-primario);
+  background: var(--color-superficie-suave);
+}
+@media (max-width: 600px) {
+  .habit-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .habit-weekdays {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .habit-form fieldset {
+    padding: 1rem;
+  }
+}

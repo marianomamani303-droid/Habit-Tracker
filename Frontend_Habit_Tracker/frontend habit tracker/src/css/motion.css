@@ -1,0 +1,138 @@
+/* Finite, composited animations. No permanent ambient render loop. */
+@keyframes surface-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes dashboard-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes habit-check-pop {
+  0% {
+    transform: scale(0.85);
+  }
+  55% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes orbit-arrive {
+  from {
+    opacity: 0;
+    transform: rotate(-18deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+@keyframes chart-grow {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.page-transition {
+  animation: surface-enter 380ms both;
+}
+.reveal-surface {
+  animation: surface-enter 600ms both;
+}
+.reveal-surface:nth-child(2) {
+  animation-delay: 80ms;
+}
+.reveal-surface:nth-child(3) {
+  animation-delay: 160ms;
+}
+.animated-number {
+  font-variant-numeric: tabular-nums;
+}
+.celebration {
+  position: fixed;
+  z-index: 50;
+  top: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(28rem, calc(100% - 2rem));
+  pointer-events: none;
+}
+.celebration-message {
+  position: relative;
+  padding: 1rem 1.3rem;
+  border: 1px solid #7df4c680;
+  border-radius: 1rem;
+  background: #112b29;
+  box-shadow:
+    0 12px 50px #00000060,
+    0 0 40px #7df4c623;
+  animation: surface-enter 280ms both;
+}
+.celebration-message strong {
+  display: block;
+  color: var(--color-primario);
+  font-family: var(--fuente-display);
+}
+.celebration-message span {
+  font-size: 0.85rem;
+}
+.celebration-message p {
+  margin: 0.5rem 0 0;
+  color: var(--color-acento);
+  font-size: 0.8rem;
+  animation: habit-check-pop 500ms;
+}
+.celebration-particles {
+  position: absolute;
+  inset: 50% 50%;
+}
+.celebration-particles i {
+  position: absolute;
+  width: 6px;
+  height: 9px;
+  border-radius: 2px;
+  background: var(--particle-color);
+  opacity: 0;
+  animation: particle-burst 1000ms ease-out forwards;
+}
+@keyframes particle-burst {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--particle-x), var(--particle-y)) rotate(200deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .celebration-particles {
+    display: none;
+  }
+}

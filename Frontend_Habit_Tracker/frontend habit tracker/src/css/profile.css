@@ -1,0 +1,77 @@
+.habit-avatar-editor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+.habit-avatar-editor > div:last-child {
+  min-width: 0;
+  max-width: 100%;
+  flex: 1 1 12rem;
+}
+.habit-profile-picture {
+  display: grid;
+  place-items: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: linear-gradient(145deg, #7df4c6, #92b9ff);
+  color: #142934;
+  font-family: var(--fuente-display);
+  font-size: 2.2rem;
+  font-weight: 500;
+  box-shadow: 0 0 32px #7df4c610;
+}
+.habit-profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.habit-upload-label {
+  display: grid;
+  gap: 0.5rem;
+  font-weight: 650;
+  font-size: 0.8rem;
+}
+.habit-upload-label input {
+  width: 100%;
+  max-width: 20rem;
+  font-size: 0.75rem;
+}
+.habit-upload-label input::file-selector-button {
+  border: 0;
+  background: #273c4b;
+  color: var(--color-texto);
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  margin-right: 0.5rem;
+  font: inherit;
+  cursor: pointer;
+}
+.habit-profile-email {
+  overflow-wrap: anywhere;
+  font-size: 0.85rem;
+}
+.habit-recovery {
+  max-width: 35rem;
+  width: calc(100% - 2rem);
+  margin: 3rem auto;
+  animation: surface-enter 380ms both;
+}
+.habit-recovery form {
+  display: grid;
+  gap: 1.25rem;
+}
+.habit-recovery h1 {
+  margin: 0 0 1rem;
+}
+.habit-recovery > p {
+  color: var(--color-suave);
+  font-size: 0.85rem;
+}
+.habit-recovery label {
+  display: grid;
+  gap: 0.5rem;
+}
